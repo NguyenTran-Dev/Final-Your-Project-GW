@@ -1,0 +1,158 @@
+@import "./variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import "./base.scss";
+.cart {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  &__header {
+    margin-bottom: 4rem;
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    background-image: url("../pages/shop/ShopListItem/breadcrumb-banner.jpg");
+    background-size: 100%;
+    min-height: 15rem;
+    text-align: center;
+    &-h1 {
+      font-family: "Berkshire Swash", cursive;
+      font-weight: 700;
+      font-size: 4rem;
+    }
+  }
+  &__emty {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    text-align: center;
+    &-p {
+      color: $textColor;
+      font-weight: 700;
+      margin: 3rem 0;
+    }
+    &-a {
+      color: $textColor;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        color: $primaryColor;
+      }
+    }
+  }
+  &__table {
+    width: 100%;
+    overflow-x: auto;
+    &-tr {
+      text-align: center;
+      &--th {
+        font-size: 1.6rem;
+        padding: 2rem 0;
+        background: $primaryColor;
+        border: 1px solid $borderColor;
+        color: $white;
+      }
+      &--td {
+        border: 1px solid $borderColor;
+        font-size: 1.6rem;
+        &--img {
+          max-width: 100%;
+        }
+        &--icon {
+          cursor: pointer;
+          &:hover {
+            color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+  &__form {
+    padding: 2rem;
+    align-items: center;
+    border: 1px solid $borderColor;
+
+    &-col1 {
+      align-items: center;
+      display: flex !important;
+      &--ipu {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding: 1.6rem;
+        margin-right: 2rem;
+        &:hover {
+          border: 1px solid $primaryColor !important;
+        }
+      }
+      &--btn {
+        border: none;
+        background: $primaryColor;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $white;
+        padding: 1rem 3rem 3.2rem 3rem;
+        &:hover {
+          background: $primaryHoverColor;
+          color: $white;
+        }
+      }
+    }
+    &-col2 {
+      display: flex !important;
+      justify-content: flex-end;
+    }
+  }
+  &__total {
+    background: $backgroundColor;
+    max-width: 50rem;
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    padding: 2rem 2rem 0 2rem;
+    margin-top: 3rem;
+    &-h2 {
+      margin-bottom: 2rem;
+    }
+    &-conten {
+      border-bottom: 1px solid $borderColor;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      &--total {
+        font-size: 2rem;
+        font-weight: 700;
+      }
+    }
+    &-btn {
+      width: 100%;
+      margin: 1rem 0;
+      background: $primaryColor;
+      color: $white;
+      font-size: 1.6rem;
+      font-weight: 700;
+      padding-bottom: 2rem;
+      border: none;
+      &:hover {
+        background: $primaryHoverColor;
+        color: $white;
+      }
+    }
+  }
+}
+.tr--thum {
+  width: 14rem;
+}
+.tr--product {
+  padding: 0 8rem;
+}
+.tr--price {
+  min-width: 12rem;
+}
+
+.tr--quantity {
+  min-width: 12rem;
+}
+.tr--total {
+  min-width: 13rem;
+}
+.tr--remove {
+  cursor: pointer;
+  min-width: 10rem;
+}

@@ -1,0 +1,10 @@
+{
+    "database": {
+        "host": "49.236.208.6",
+        "port": 23306,
+        "user": "selena",
+        "password": "DNL123$321",
+        "database": "selena"
+    },
+    "secret": "DANH@123"
+}

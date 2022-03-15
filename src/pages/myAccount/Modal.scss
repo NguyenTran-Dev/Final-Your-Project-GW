@@ -1,0 +1,30 @@
+@import "../../style/variable.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content1 {
+  position: absolute;
+  padding: 2rem;
+  background: $white;
+  min-height: 20rem;
+  max-height: 50rem;
+  overflow-y: auto;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .modal-btn {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}

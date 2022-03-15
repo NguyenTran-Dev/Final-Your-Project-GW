@@ -1,0 +1,28 @@
+@import "./variable.scss";
+
+
+.myaccount{
+    padding: 2rem;
+    border-radius: 2rem;
+    background-color: $backgroundColor;
+    &__nav{
+        &--flex{
+            display: flex;
+        }
+        &--name{
+            margin-left: 2rem;
+            
+        }
+        &__bot{
+            margin-top: 3rem;
+            padding: 2rem;
+            border-radius: 1rem;
+            background-color: $white;
+        }
+    }
+    &__title{
+        border-bottom: 0.1rem dashed $borderColor;
+        padding-bottom: 1rem;
+        margin-bottom: 3rem;
+    }
+}

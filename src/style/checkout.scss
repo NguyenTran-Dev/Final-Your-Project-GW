@@ -1,0 +1,30 @@
+@import "./variable.scss";
+.checkout{
+    &--borderbot{
+        border-bottom: 0.1rem solid $borderColor;
+    }
+    & table, th, td {
+        border:1px solid $borderColor;
+        padding: 2rem;
+        text-align: center;
+    }
+    & table{
+        width: 100%;
+    }
+    &__order{
+        color: $textColor;
+        background-color: $backgroundColor;
+        &--radio{
+            &--textColor{
+                color: $textColor;
+            }
+            padding-left: 2rem;
+        }
+        &--padding{
+            padding: 3rem 0 2rem 0;
+        }
+        &--center{
+            text-align: center;
+        }
+    }
+}

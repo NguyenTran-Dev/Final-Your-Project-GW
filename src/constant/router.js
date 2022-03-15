@@ -1,0 +1,20 @@
+export const ROUTE = {
+  HOME: "/",
+  SHOPITEM: "/shop-product",
+  SHOPDETAIL: "/shop-product-detail",
+  ABOUTUS: "/about-us",
+  REGISTER: "/register",
+  LOGIN: "/login",
+  CONTACT: "/contact",
+  CHECKOUT: "/checkout",
+  CART: "/cart",
+  WISHLIST: "/wish-list",
+  MYACCOUNT: "/my-account",
+  ADMIN : "/admin",
+  STORE: "/store",
+  ADDPRODUCT:"/add-product",
+  DASHBOARD: "/dashboard",
+  CUSTOMER: "/customer",
+  ORDERS: "/orders",
+  PRODUCTS:"/products"
+};

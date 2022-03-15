@@ -1,0 +1,245 @@
+@import "../style/variable.scss";
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100% !important;
+    overflow: hidden;
+  }
+  .header {
+    position: static;
+
+    &__top {
+      &-search {
+        padding: 0 1rem;
+      }
+      &-img {
+        text-align: center;
+      }
+      &-search {
+        order: -1;
+        margin: 1rem 0;
+      }
+    }
+  }
+  .header__top-account {
+    order: 0 !important;
+  }
+  .slider {
+    padding: 0 1rem;
+  }
+  .shipping {
+    margin-top: 12rem;
+  }
+  .categories-item-boder {
+    max-height: none !important;
+  }
+  .categories-item-col--h2 {
+    font-size: 2.4rem;
+  }
+  .mobieslider {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+  }
+  .shopitem__sortitem {
+    margin-top: 1rem;
+  }
+  .cart__responsive {
+    overflow-x: auto;
+  }
+  .cart__form-col1--btn {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .cart__form-col1 {
+    flex-direction: column;
+    justify-content: center;
+    &--btn {
+      width: 100%;
+    }
+  }
+  .cart__form-col2 {
+    justify-content: center !important;
+  }
+  .wishlist__responsive {
+    overflow-x: auto;
+  }
+  .wishlist__table {
+    margin: 0 1rem;
+  }
+  .sidebar {
+    padding: 1rem;
+  }
+  .shopitem {
+    &__sortitem {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+  }
+  .submenu {
+    display: flex;
+    align-items: center;
+    &__cart {
+      color: $primaryColor;
+      font-size: 3rem;
+      padding-right: 1rem;
+      &:hover {
+        color: $primaryHoverColor;
+      }
+    }
+  }
+  .categories-item-col {
+    min-height: 30rem !important;
+  }
+  .categories-item-col--h2 {
+    font-size: 2.5rem !important;
+  }
+  .footer__top {
+    padding: 0 1rem;
+  }
+  .shopitem__sortitem-layout {
+    display: block !important;
+  }
+  .cart__table {
+    margin: 0 1rem;
+  }
+  .aboutus__provide-content {
+    margin: 0 1rem;
+  }
+  .product__list-item {
+    &--img {
+      height: 20rem !important;
+    }
+    &--h3 {
+      font-size: 1.4rem !important;
+    }
+  }
+  .admin-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: $primaryColor;
+    color: $white;
+    font-weight: 500;
+  }
+
+  .admin-body {
+    height: 0% !important;
+  }
+  .header-noti {
+    width: 10px;
+    height: 10px;
+    transform: translate(17px, -8px);
+  }
+  .product__list-item--img {
+    display: flex;
+    justify-content: center;
+  }
+  .ant-dropdown {
+    left: 1rem !important;
+    top: 21.7rem;
+  }
+  .header-noti span {
+    transform: translateY(-1px);
+    font-size: 10px;
+  }
+}
+// 768px
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100% !important;
+    overflow: hidden;
+  }
+  .header__top-img {
+    display: flex;
+    justify-content: center;
+  }
+  .header__top-account {
+    order: 1;
+  }
+  .header__top-search {
+    margin: 1rem 0;
+  }
+  .shipping {
+    margin-top: 12.6rem !important;
+  }
+  .categories-item-boder {
+    max-height: 40rem !important;
+  }
+  .cart__responsive {
+    overflow-x: auto;
+  }
+  .wishlist__responsive {
+    overflow-x: auto;
+  }
+  .footer {
+    padding: 0 2rem;
+  }
+  .sidebar {
+    padding: 0 2rem;
+  }
+  .aboutUs {
+    &__provide {
+      padding: 0 2rem;
+    }
+  }
+  .product__list-item--img {
+    display: flex;
+    justify-content: center;
+  }
+  .ant-input-search-button {
+    height: 3rem !important;
+  }
+  #header__top-search-input {
+    padding: 0.3rem 0.5rem;
+  }
+}
+// 1080
+@media only screen and (max-width: 1080px) {
+  .container {
+    width: 98% !important;
+    overflow: hidden;
+  }
+  .shipping {
+    margin-top: 6rem;
+  }
+  .product__list-item--img {
+    display: flex;
+    justify-content: center;
+  }
+}
+// split
+// split
+// split
+.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  border-bottom: 0.2rem solid $borderColor;
+}
+.menufixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  background: white;
+}
+.subfixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  margin-top: 9rem;
+  background: white;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid $borderColor;
+}

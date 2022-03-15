@@ -1,0 +1,128 @@
+.ant-tabs-nav-wrap {
+  display: flex;
+  justify-content: center;
+}
+.ant-tabs-tab-btn {
+  color: $textColor;
+  &:hover {
+    color: $primaryColor;
+  }
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: $primaryColor;
+  text-shadow: 0 0 0.25px currentColor;
+}
+.ant-tabs-ink-bar {
+  background-color: $primaryColor;
+}
+.ant-tabs-tab {
+  min-width: 5rem;
+  font-size: 1.8rem !important;
+}
+// Header
+// Header
+// Header
+.ant-input-search-button {
+  height: 5.4rem;
+  border-radius: 0 2rem 2rem 0 !important;
+  &:hover {
+    border: 0.1rem solid $primaryColor !important;
+  }
+}
+.ant-popover {
+  color: $black;
+}
+.ant-menu-submenu-selected {
+  color: $primaryColor !important;
+}
+
+.ant-menu-item-active {
+  color: $primaryColor !important;
+}
+.ant-menu-inline .ant-menu-item::after {
+  border-right: $primaryColor 3px solid !important;
+}
+.ant-menu-title-content:hover {
+  // color: $primaryColor !important;
+}
+.ant-menu-title-content {
+  color: $black !important;
+  font-weight: 500;
+}
+
+.ant-menu-submenu-arrow::after {
+  background-color: $textColor;
+}
+.ant-menu-submenu-arrow::before {
+  background-color: $textColor;
+}
+.ant-select-selector:hover {
+  border: 1px solid $primaryColor !important;
+}
+.ant-pagination-item-active a {
+  color: $primaryColor;
+}
+.ant-pagination-item:hover a {
+  color: $primaryColor;
+}
+.ant-pagination-item-active {
+  border-color: $primaryColor;
+}
+.ant-pagination-item:hover {
+  border-color: $primaryColor;
+}
+.ant-input-group-addon {
+  border-radius: 30rem;
+}
+
+//////////////label////////
+.ant-form label {
+  min-width: 13rem;
+}
+/////////Acount Detail////////
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: $primaryColor;
+}
+.ant-pagination-options {
+  display: none;
+}
+.ant-slider-track {
+  background: $primaryColor;
+  &:hover {
+    background: $primaryColor;
+  }
+}
+.ant-menu-item-group-title {
+  padding: 0;
+}
+.ant-select {
+  width: 200px !important;
+}
+// Modal
+.ant-modal-mask {
+  background-color: transparent !important;
+  bottom: unset !important;
+  left: unset !important;
+  top: unset !important;
+  right: unset !important;
+}
+.ant-modal-wrap {
+  bottom: unset !important;
+  left: unset !important;
+  top: unset !important;
+  right: unset !important;
+}
+.ant-modal {
+  position: fixed !important;
+  right: 0;
+  top: 0;
+  left: 0;
+  width: 32rem !important;
+}
+
+.ant-btn-primary {
+  border: none;
+}
+.ant-modal-confirm-body .ant-modal-confirm-title {
+  color: $primaryColor;
+}

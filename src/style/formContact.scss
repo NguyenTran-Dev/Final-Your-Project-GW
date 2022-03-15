@@ -1,0 +1,42 @@
+@import "./variable.scss";
+
+.contact {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  &__header {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    background-image: url("../pages/shop/ShopListItem/breadcrumb-banner.jpg");
+    background-size: 100%;
+    min-height: 15rem;
+    text-align: center;
+    &-h1 {
+      font-family: "Berkshire Swash", cursive;
+      font-weight: 700;
+      font-size: 4rem;
+    }
+  }
+}
+.form__contact {
+  &--user {
+    font-family: "Berkshire Swash", cursive;
+    font-weight: 700;
+    font-size: 2.2rem;
+    padding: 3rem;
+  }
+  &--our {
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    padding: 3rem;
+    background-color: $backgroundColor;
+    & p {
+      color: $textColor;
+      font-size: 1.6rem;
+    }
+  }
+  &--map {
+    width: 100%;
+    min-height: 50rem;
+    border: none;
+  }
+}

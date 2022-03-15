@@ -1,0 +1,25 @@
+@import "../../style/variable.scss";
+@import "../../style/base.scss";
+
+.dashBoard{
+    &__group{
+        display: flex;
+        border: 0.2rem solid $borderColor;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0rem 1rem 1rem $borderColor;
+    }
+    &__icon{
+        font-size: 9rem;
+        margin-right: 3rem;
+        color: $primaryColor;
+    }
+    & h2{
+        color: $primaryColor;
+    }
+    &__chart{
+        margin-top: 8rem;
+       width: 100%;
+       height: 50rem;
+    }
+}

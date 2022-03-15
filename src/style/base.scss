@@ -1,0 +1,47 @@
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5% !important;
+  font-family: "Raleway", sans-serif !important;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+@keyframes growth {
+  from {
+    transform: scale(var(--growth-from));
+  }
+  to {
+    transform: scale(var(--growth-to));
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes drag {
+  from {
+    width: 0.1rem;
+  }
+  to {
+    width: 8rem;
+  }
+}
+@keyframes moving {
+  from {
+    transform: translatex(40rem);
+  }
+  to {
+    transform: translatex(1rem);
+  }
+}

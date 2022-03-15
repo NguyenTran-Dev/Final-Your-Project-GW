@@ -1,0 +1,239 @@
+@import "./variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import "./base.scss";
+
+// Header
+// Header
+.header {
+  padding: 2rem 0;
+  top: 0;
+  row-gap: 0px;
+  position: fixed;
+  z-index: 1000;
+  background: $white;
+  left: 0;
+  right: 0;
+}
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+}
+.header__top-img {
+  text-align: left;
+  cursor: pointer;
+}
+.header__top-right {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  // width: 70%;
+}
+
+/* header account*/
+.header__top-account {
+  display: flex !important;
+  justify-content: center;
+  &-a {
+    color: $textColor;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+
+.header__top-account-sub {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem;
+  align-items: center;
+  width: 12rem;
+  padding: 1rem;
+}
+/* header Search*/
+.header__top-search {
+  border: $borderColor;
+  outline: none;
+  position: relative;
+  &:hover {
+    color: $borderColor;
+  }
+  &:hover .result {
+    display: flex;
+  }
+  .result {
+    display: none;
+    flex-direction: column;
+    background-color: $borderColor;
+    color: $textColor;
+    max-height: 180px;
+    overflow: hidden;
+    z-index: 10;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 0.2rem;
+    position: absolute;
+  }
+}
+#header__top-search-input {
+  border-color: $borderColor;
+  padding: 1.5rem;
+  border-radius: 2rem 0 0 2rem;
+  &:hover {
+    border-color: $borderColor;
+  }
+}
+// header cart
+.header__top-cart {
+  display: flex !important;
+  justify-content: center;
+}
+.header__top-cart-sub {
+  min-width: 35rem;
+  padding: 2rem;
+}
+.header__top-cart-container {
+  justify-content: space-between;
+
+  img {
+    margin-right: 2rem;
+  }
+}
+.header__top-cart-cover {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.header__top-cart-icon {
+  position: relative;
+  color: $primaryColor;
+  cursor: pointer;
+  font-size: 3.6rem;
+  &:hover {
+    color: $primaryHoverColor;
+  }
+}
+.header-noti {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  transform: translate(31px, -39px);
+  background-color: #e7441f;
+  border-radius: 50%;
+  color: $white;
+  span {
+    transform: translateY(-2px);
+  }
+}
+.header__top-cart-emty {
+  text-align: center;
+  img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  p {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+}
+.header__top-container {
+  display: flex;
+}
+.header__top-container-icon {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.header__top-container-img {
+  width: 10rem;
+}
+.header__top-container-info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0.1rem;
+  flex: 1;
+  &--prd {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+  &--qty {
+    color: $textColor;
+  }
+  &--prc {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Lora", serif;
+  }
+}
+.header__top-container-clear {
+  margin: 0.1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  &:hover {
+    color: $primaryColor;
+  }
+}
+.header__top-container-subtotal {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: "Lora", serif;
+}
+#header__top-container-btn {
+  width: 100%;
+  background: $headingColor;
+  border: none;
+  &:hover {
+    background: $primaryColor;
+  }
+}
+//  Header Menu
+//  Header Menu
+
+.header__top-menu-ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 2.2rem 0;
+  border-bottom: 0.2rem solid $borderColor;
+  font-family: "Raleway", sans-serif;
+}
+.header__top-menu-li {
+  min-width: 13rem;
+}
+.header__top-menu-a {
+  padding: 2.4rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: $headingColor;
+  &:hover {
+    color: $primaryColor;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    border-bottom: $primaryColor 0.2rem solid;
+  }
+}
+
+.header__top-submenu {
+  // border-top: 2px solid $primaryColor;
+  width: 20rem;
+  font-family: "Raleway", sans-serif;
+
+  &--a {
+    margin: 0.1rem;
+    font-size: 1.6rem;
+  }
+}
+.boder-none {
+  &:hover {
+    // border: none !important;
+  }
+}

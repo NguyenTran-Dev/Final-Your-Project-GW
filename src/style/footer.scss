@@ -1,0 +1,48 @@
+@import "./variable.scss";
+
+.footer{
+    margin-top: 10rem;
+    font-size: 1.5rem;
+    &--padding{
+        padding-top: 2rem;
+    }
+    & p{
+        color: $textColor;
+    }
+    
+    &__btn{
+        background: $primaryColor;
+        border-radius: 5rem;
+        outline: none;
+        border: none;
+        &:hover{
+            background: #FB8800;
+        }
+    }
+    &__top{
+        border-top: 0.2rem solid $borderColor;
+        padding-top: 4rem;
+        & a{
+            color: $textColor;
+        }
+        &--newsLetter{
+            &-input{
+                font-style: italic;
+                background-color: $backgroundColor;
+                padding: 1.2rem;
+                margin: 2rem 0 3rem 0;
+            }
+            
+    
+        }
+        
+    }
+    &__bot{
+        background-color: $backgroundColor;
+        margin-top: 3rem;
+        padding: 2.5rem 0;
+    }
+}
+.icon{
+    margin-right: 1rem; 
+}

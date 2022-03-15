@@ -1,0 +1,23 @@
+@import "../../../style/variable.scss";
+.viewproduct__eye {
+  display: none;
+  border: 1px solid $primaryColor;
+  background: white;
+  position: absolute;
+  bottom: 50%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50%;
+  color: $primaryColor;
+  transition: 0.5s linear;
+  &-icon {
+    margin-top: 0.4rem;
+    font-size: 2rem;
+  }
+  &:hover {
+    background: $primaryColor;
+    color: $white;
+  }
+}
+.popover {
+  background: $black !important;
+}

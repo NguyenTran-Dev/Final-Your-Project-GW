@@ -1,0 +1,38 @@
+@import '../style/variable.scss';
+
+.form{
+    &__group{
+        padding: 5rem;
+        box-shadow: 0.5rem 0.5rem 2rem #ccc;
+        &--input{
+            padding: 1rem;
+        }
+        &--subform{
+            display: flex;
+            justify-content: space-between;
+            & a{
+                color: $primaryColor;
+                font-style: italic;
+                &:hover{
+                    color: $primaryHoverColor;
+                }
+            }
+        }
+        &--backgroundColor{
+            background-color: $backgroundColor;
+        }
+    }
+    &__btn{
+        background: $primaryColor;
+        outline: none;
+        border: none;
+        &:hover{
+            background: $primaryHoverColor;
+        }
+        &--center{
+            text-align: center;
+        }
+    }
+
+    
+}

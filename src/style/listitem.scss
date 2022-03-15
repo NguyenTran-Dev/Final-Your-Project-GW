@@ -1,0 +1,94 @@
+@import "./variable.scss";
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+@import "./base.scss";
+@import "../component/commont/quickview.scss";
+// SideBar
+.sidebar {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  &__h1 {
+    font-family: "Berkshire Swash", cursive;
+    font-weight: 700;
+    font-size: 2.4rem;
+  }
+  &__menu2 {
+    // min-height: 20rem;
+  }
+  &__img {
+    margin-top: 2rem;
+  }
+  &__menu1 {
+    p {
+      margin-top: 1rem;
+      font-weight: 700;
+    }
+  }
+}
+// Shop Item
+.shopitem {
+  &__sortitem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-layout {
+      margin: 1rem;
+      &--btn {
+        padding: 0.5rem 0.8rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        background: $white;
+        color: $primaryColor;
+        border: 1px solid $primaryColor;
+        &:hover {
+          background: $primaryColor;
+          color: $white;
+        }
+      }
+    }
+    &-sort {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+      &--span {
+        font-weight: 400;
+        font-size: 1.6rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+  &__pagi {
+    justify-content: center;
+    display: flex;
+    border: 0.1rem solid $borderColor;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+}
+// /home shop
+
+.homeshop {
+  &__header {
+    margin-bottom: 4rem;
+    font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    background-image: url("../pages/shop/ShopListItem/breadcrumb-banner.jpg");
+    background-size: 100%;
+    min-height: 15rem;
+    text-align: center;
+    &-h1 {
+      font-family: "Berkshire Swash", cursive;
+      font-weight: 700;
+      font-size: 4rem;
+    }
+  }
+}
+.product__list {
+  .align-center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+}
