@@ -130,9 +130,7 @@ const AddProduct = () => {
         />
       </Form.Item>
       <Form.Item name='image' label='Image'>
-        <Upload {...props}>
-          <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
+        <Input type="file"></Input>
       </Form.Item>
       <Form.Item>
         <Button

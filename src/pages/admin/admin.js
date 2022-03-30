@@ -111,7 +111,6 @@ const Admin = () => {
     </Menu>
   );
   return (
-    <div className="container">
       <div className="admin">
         <Row className="admin-header">
           <Col span={isMoblie ? 24 : 6}>
@@ -262,7 +261,6 @@ const Admin = () => {
           </Col>
         </Row>
       </div>
-    </div>
   );
 };
 export default Admin;
