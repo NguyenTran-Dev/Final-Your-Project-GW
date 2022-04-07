@@ -2,6 +2,9 @@
 .admin {
   height: 100vh;
   overflow: hidden;
+  table{
+    width: 100%;
+  }
   &-text {
     color: white;
     font-weight: 700;

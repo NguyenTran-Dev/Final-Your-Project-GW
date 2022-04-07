@@ -24,15 +24,9 @@ export const getListProductApi = createAsyncThunk(
 export const postListProductApi = createAsyncThunk(
   "product/postProductApi",
   async (payload) => {
+    console.log(payload)
     await axios
-      .post(`http://localhost:5000/products`, {
-        name: payload.name,
-        type: payload.type,
-        price: payload.price,
-        stock: payload.stock,
-        color: payload.color,
-        description: payload.description,
-      })
+      .post(`http://localhost:5000/products`, payload)
       .then((res) => {
         // console.log(".listProductApi ~ res", res);
         return res;
