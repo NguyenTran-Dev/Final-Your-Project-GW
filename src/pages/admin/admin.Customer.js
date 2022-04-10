@@ -65,9 +65,10 @@ const AdminRow = () => {
   };
 
   const renderListCustomer = () => {
-    return listCustomerApi
-      .map((item, index) => {
-        
+    let listCustomers = listCustomerApi.filter((item) => {
+      return item.role === '2';
+      })
+      return listCustomers.map((item, index) => {
         return (
           <>
             {edit === item.id ? (

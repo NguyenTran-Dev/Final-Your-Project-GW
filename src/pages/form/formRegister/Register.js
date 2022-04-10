@@ -1,45 +1,30 @@
 /** @format */
 
-import React, { useState } from "react";
-import { Row, Col, Alert } from "antd";
-import { Form, Input, Button, Checkbox,message } from "antd";
-import { useDispatch, useSelector } from "react-redux";
-import { addCustomerApi } from "../../../redux/reducers/customerSlice";
-import validateMessages from "../ValidateMessage";
-import "../../../style/form.scss";
-import { useHistory } from "react-router";
+import React, { useState } from 'react';
+import { Row, Col, Alert } from 'antd';
+import { Form, Input, Button, Checkbox, message } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCustomerApi } from '../../../redux/reducers/customerSlice';
+import validateMessages from '../ValidateMessage';
+import '../../../style/form.scss';
+import { useHistory } from 'react-router';
 
 const Register = () => {
   const [form] = Form.useForm();
-  const [formValue, setFormValue] = useState({
-    gender:"",
-    fullName:"",
-    username: "",
-    email: "",
-    address: "",
-    phone: "",
-    password: "",
-    confirmPassword: ""
-  });
 
+  const rgPass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[A-Z][a-zA-Z0-9!@#$%^&*]{7,15}$/;
+  const rgPhone = /^(^0)?(9|8|7)\d{8}$/;
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const handleRegister = () => {
-    if (formValue.password === formValue.confirmPassword) {
+  const onFinish = (values) => {
+    if (values.password === values.confirmPassword) {
       message.success('Register Success', 3);
-      history.push("/login")
-      return dispatch(addCustomerApi({ ...formValue }));
-    }
-    
-  };
-  const handelOnChange = (e) => {
-    if (e.target) {
-      setFormValue({ ...formValue, [e.target.name]: e.target.value });
-    } else {
-      setFormValue({ ...formValue });
+      dispatch(addCustomerApi({ ...values }));
+      history.push('/login');
     }
   };
+
   return (
     <div className='container'>
       <Row gutter={[16]}>
@@ -49,106 +34,123 @@ const Register = () => {
             <Form
               form={form}
               name='basic'
+              layout="vertical"
               initialValues={{ remember: true }}
+              onFinish={onFinish}
+              autoComplete='off'
               validateMessages={validateMessages}>
-                <Form.Item
+              <Form.Item
+                label="Full Name"
                 name='fullName'
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Full Name",
                   },
                 ]}>
                 <Input
                   className='form__group--input'
-                  placeholder='Enter Full Name'
+                  placeholder='Enter full name'
                   name='fullName'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.fullName}
+                  
                 />
               </Form.Item>
               <Form.Item
+                label="Username"
                 name='username'
                 rules={[
                   {
                     required: true,
-                    message: "Please input your Username",
                   },
                 ]}>
                 <Input
                   className='form__group--input'
-                  placeholder='Enter Username'
+                  placeholder='Enter username'
                   name='username'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.username}
+                  
                 />
               </Form.Item>
               <Form.Item
+                label="Email"
                 name='email'
-                rules={[{ required: true, type: "email" }]}>
+                rules={[{ required: true, type: 'email' }]}>
                 <Input
                   className='form__group--input'
-                  placeholder='Enter your Email'
+                  placeholder='Enter email'
                   name='email'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.email}
+                  
                 />
               </Form.Item>
               <Form.Item
+                label="Phone Number"
                 name='phone'
-                rules={[{ required: true}]}>
+                rules={[{ required: true },
+                  { type: 'regexp' },
+                  {
+                    pattern: new RegExp(rgPhone),
+                    mess: 'must have number, length 10 character! Ex: 0983222888',
+                },
+                {
+                    string:'10'
+                  }
+              ]}>
                 <Input
                   className='form__group--input'
-                  placeholder='Enter your Phone'
+                  placeholder='Enter phone number'
                   name='phone'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.phone}
+                  
                 />
               </Form.Item>
               <Form.Item
+                label="Password"
                 name='password'
                 rules={[
-                  { required: true, message: "Please input your password!" },
+                  { required: true},
+                  { type: 'regexp' },
+                  {
+                    pattern: new RegExp(rgPass),
+                    mess: 'include first uppercase letter, lowercase letter, number, special character',
+                  },
                 ]}>
                 <Input.Password
                   className='form__group--input'
-                  placeholder='Enter your Password'
+                  placeholder='Enter password'
                   name='password'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.password}
                 />
               </Form.Item>
               <Form.Item
+                label="Confirm Password"
                 name='confirmPassword'
                 rules={[
-                  { required: true, message: "Please Repeat your password!" },
-                ]}>
+                  { required: true},
+                ]}
+               >
                 <Input.Password
                   className='form__group--input'
-                  placeholder='Repeat your Password'
+                  placeholder='Enter Confirm Password'
                   name='confirmPassword'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.confirmPassword}
+                  
                 />
               </Form.Item>
               <Form.Item
+                label="Address"
                 name='address'
-                rules={[{ required: true}]}>
+                rules={[
+                  { required: true},
+                ]}
+              >
                 <Input
                   className='form__group--input'
-                  placeholder='Enter your Address'
+                  placeholder='Enter Address'
                   name='address'
-                  onChange={(e) => handelOnChange(e)}
-                  value={formValue.address}
                 />
               </Form.Item>
-              
+
               <Form.Item>
                 <Button
                   type='primary'
                   htmlType='submit'
                   className='form__btn'
-                  onClick={handleRegister}>
+                >
                   REGISTER
                 </Button>
               </Form.Item>
@@ -157,7 +159,7 @@ const Register = () => {
         </Col>
         <Col xs={{ span: 24 }} lg={{ span: 12 }}>
           <img
-            style={{ width: "100%", height: "91%" }}
+            style={{ width: '100%', height: '91%' }}
             src='Images/banner/best-sellers.png'
           />
         </Col>

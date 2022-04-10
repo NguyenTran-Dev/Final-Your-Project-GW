@@ -1,6 +1,7 @@
 /** @format */
 
-import React from "react";
+import React,{ useState } from "react";
+import { Button, Input, Select, message, Pagination } from "antd";
 import {
   EditFilled,
   DeleteOutlined,
@@ -13,12 +14,9 @@ import {
   setSort,
   setCurrentPage,
 } from "../../redux/reducers/productSlice";
-import { Button, Input, Select, message, Pagination } from "antd";
-import { useState } from "react";
 import {
   deleteOrderApi,
   getOrderApi,
-  getOrderUserApi,
   searchItem,
   updateOrderApi,
 } from "../../redux/reducers/orderSlice";

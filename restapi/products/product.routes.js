@@ -1,8 +1,9 @@
 module.exports = app => {
     const Products = require("./product.controller.js");
+    const {upload} = require('./product.controller.js')
   
     // Create a new products
-    app.post("/products", Products.create);
+    app.post("/products", upload.single('img'), Products.create);
   
     app.get("/products/search", Products.getProducts);
 

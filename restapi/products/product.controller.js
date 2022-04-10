@@ -1,20 +1,44 @@
 const Products = require("./product.model.js")
+const multer = require('multer');
+const shortid = require('shortid');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+      cb(null, '../public/Images/product')
+  }
+  ,
+  filename: function (req, file, cb) {
+      cb(null, shortid.generate() + '-' + file.originalname)
+  }
+})
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+      cb(null, true)
+  } else {
+      cb(null, false)
+  }
+}
+exports.upload = multer({
+  storage: storage,
+  fileFilter: fileFilter
+})
+
+
 
 exports.create = (req, res) => {
     if (!req.body) {
         res.status(400).send({
           message: "Content can not be empty!"
         });
-    };
+  };
+    
     const product = new Products ({
       name: req.body.name,
       price: req.body.price,
       description: req.body.description,
-      // img: req.body.img,
+      img:  `Images/product/${req.file.filename}`,
       type: req.body.type,
       color: req.body.color,
       stock: req.body.stock,
-  
     });
       Products.create(product, (err, data) => {
         if (err)

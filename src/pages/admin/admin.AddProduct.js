@@ -8,19 +8,19 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postListProductApi } from "../../redux/reducers/productSlice";
 import "../../style/form.scss";
+import axios from 'axios';
 const AddProduct = () => {
   const dispatch = useDispatch();
+  const [image, setImage] = useState()
   const [formVl, setFormVl] = useState({
     name: "",
     type: "",
     price: "",
-    type: "",
     color: "",
     stock: "",
     description: "",
-    img:""
+    img: ""
   });
-
   const handleOnChange = (e) => {
     if (e.target) {
       setFormVl({ ...formVl, [e.target.name]: e.target.value });
@@ -30,29 +30,26 @@ const AddProduct = () => {
     }
   };
 
-  const handleSave = () => {
-    if (!!formVl) {
+  const handleSave = async () => {
+    // console.log(image[0].name)
+    formVl.img = image[0];
+    let formData = new FormData();
+    formData.append('name', formVl.name);
+    formData.append('type', formVl.type);
+    formData.append('description', formVl.description);
+    formData.append('price', formVl.price);
+    formData.append('color', formVl.color);
+    formData.append('stock', formVl.stock);
+    formData.append('img', formVl.img);
+    console.log(formData)
+    // const { data } = await axios.post(`http://localhost:5000/products`, formData)
+    // console.log(data)
+    // if (!!formVl) {
+      // console.log(formVl)
       message.success('Add product success!', 3);
-      dispatch(postListProductApi({ ...formVl }));
-    } else {
-    }
-  };
-  const props = {
-    name: 'file',
-    action: formVl.img,
-    headers: {
-      authorization: 'authorization-text',
-    },
-    onChange(info) {
-      if (info.file.status !== 'uploading') {
-        console.log(info.file, info.fileList);
-      }
-      if (info.file.status === 'done') {
-        message.success(`${info.file.name} file uploaded successfully`);
-      } else if (info.file.status === 'error') {
-        message.error(`${info.file.name} file upload failed.`);
-      }
-    },
+    await dispatch(postListProductApi(formData));
+    // } else {
+    // }
   };
   return (
     <Form name='nest-messages' validateMessages={ValidateMessage}>
@@ -129,10 +126,10 @@ const AddProduct = () => {
           value={formVl.description}
         />
       </Form.Item>
-      <Form.Item name='image' label='Image'>
-        <Upload {...props}>
-          <Button icon={<UploadOutlined />}>Upload</Button>
-        </Upload>
+      <Form.Item name='img' label='Image'>
+        <Input name='img' accept="image/*" type="file" onChange={(e) => {
+            setImage(e.target.files);
+          }}></Input>
       </Form.Item>
       <Form.Item>
         <Button
