@@ -22,7 +22,24 @@ export const addOrderApi = createAsyncThunk(
         });
     }
   );
-
+  export const paymentOrderApi = createAsyncThunk(
+    "order/paymentOrderApi",
+    async (payload) => {
+      await axios
+        .post(`http://localhost:5000/payment/create_payment_url`, {
+          amount: payload.total * 23000,
+          billId: payload.listId
+        })
+        .then((res) => {
+          console.log(".addOrderApi ~ res", res.data.url);
+          window.location.assign(res.data.url)
+          return res;
+        })
+        .catch((e) => {
+          console.log("e", e);
+        });
+    }
+  );
   export const getOrderApi = createAsyncThunk(
     "order/addOrderApi",
     async () => {
@@ -49,7 +66,7 @@ export const addOrderApi = createAsyncThunk(
           return res;
         })
         .catch((e) => {
-          console.log("e", e);
+          // console.log("e", e);
         });
       return res.data;
     }
@@ -64,7 +81,7 @@ export const addOrderApi = createAsyncThunk(
           return res;
         })
         .catch((e) => {
-          console.log("e", e);
+          // console.log("e", e);
         });
       return res.data;
     }

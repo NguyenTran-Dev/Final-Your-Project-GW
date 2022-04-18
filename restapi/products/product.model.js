@@ -20,7 +20,7 @@ const Products = function (products) {
         return;
       }
   
-      console.log("created products: ", { id: res.insertId, ...newProduct });
+      // console.log("created products: ", { id: res.insertId, ...newProduct });
       result(null, { id: res.insertId, ...newProduct });
     });
   };
@@ -36,7 +36,7 @@ const Products = function (products) {
       }
   
       if (res.length) {
-        console.log("found products: ", res );
+        // console.log("found products: ", res );
         result(null, res);
         return;
       }
@@ -62,7 +62,7 @@ const Products = function (products) {
           return;
         }
   
-        console.log("updated product: ", { id: id, ...Products });
+        // console.log("updated product: ", { id: id, ...Products });
         result(null, { id: id, ...Products });
       }
     );

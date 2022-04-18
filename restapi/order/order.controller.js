@@ -1,25 +1,21 @@
 const Order = require("./order.model.js");
 
-// Create and Save a new Comment
 exports.create = (req, res) => {
     if (!req.body) {
         res.status(400).send({
           message: "Content can not be empty!"
         });
     };
-
     const order = new Order  ({
         status: req.body.status,
         total: req.body.total,
         customer_id: req.body.customer_id,
         cart: req.body.cart
     });
-
     Order.create(order, ( data) => {
          res.send(data);
-      });
+    });
 };
-
 // Retrieve all Customers from the database.
 exports.findAll = (req, res) => {
   Order.getAll((err, data) => {
