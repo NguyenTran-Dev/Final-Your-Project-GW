@@ -1,12 +1,14 @@
 const sql = require('../db_connection');
 
+
 const Order = function(order) {
     this.date = new Date();
     this.status = order.status;
     this.total = order.total;
     this.customer_id = order.customer_id;
     this.cart = order.cart;
-  };
+};
+  
   const Order_detail = function(orderDetail) {
     this.quantity = orderDetail.quantity;
     this.order_id = orderDetail.order_id;

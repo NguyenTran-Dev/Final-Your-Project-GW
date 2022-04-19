@@ -13,10 +13,8 @@ import {
   getListProductApi,
   clearItemCart,
 } from "../../redux/reducers/productSlice";
-import { addOrderApi } from "../../redux/reducers/orderSlice";
-import { useHistory } from "react-router";
+import { addOrderApi, paymentOrderApi } from "../../redux/reducers/orderSlice";
 const Checkout = () => {
-  const history = useHistory()
   const list = JSON.parse(localStorage.getItem("inforUser"));
 
   const [form] = Form.useForm();
@@ -37,7 +35,7 @@ const Checkout = () => {
   }, []);
   useEffect(() => {
     setFormVl(list);
-  }, [list]);
+  }, []);
   const { cart } = useSelector((state) => state.listProduct);
 
   const onChange = (e) => {
@@ -66,7 +64,9 @@ const Checkout = () => {
     };
     dispatch(addOrderApi(request));
     dispatch(clearItemCart(-1));
-    history.push('/my-account')
+    dispatch(paymentOrderApi(request));
+
+    // history.push('/my-account')
   };
 
   const getTotal = (ship) => {
@@ -196,8 +196,7 @@ const Checkout = () => {
                   defaultValue={1}
                 >
                   <Space direction="vertical">
-                    <Radio value={1}>Payment on delivery</Radio>
-                    <Radio value={2}>Momo</Radio>
+                    <Radio value={1}>Payment on VNPAY</Radio>
                     <ul style={{ display: `${isShow ? "none" : "block"}` }}>
                       <img
                         style={{ width: "40%" }}
