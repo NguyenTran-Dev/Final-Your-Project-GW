@@ -19,7 +19,6 @@ export const addCustomerApi = createAsyncThunk(
         role: '2',
       })
       .then((res) => {
-        // console.log(".addCustomerApi ~ res", res);
         return res;
       })
       .catch((e) => {
@@ -29,11 +28,10 @@ export const addCustomerApi = createAsyncThunk(
 );
 export const getListCustomerApi = createAsyncThunk(
   'customer/getCustomerApi',
-  async (id) => {
+  async () => {
     const res = await axios
       .get(`http://localhost:5000/customer`)
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {
@@ -49,7 +47,6 @@ export const deleteListCustomerApi = createAsyncThunk(
     const res = await axios
       .delete(`http://localhost:5000/customer/${id}`)
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {

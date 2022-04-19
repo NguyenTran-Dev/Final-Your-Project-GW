@@ -112,7 +112,6 @@ const Login = () => {
                   <NavLink to={ROUTE.REGISTER}>Register</NavLink>
                 </Form.Item>
                 <Form.Item>
-                  <a>Forgot password?</a>
                 </Form.Item>
               </div>
               <Form.Item>

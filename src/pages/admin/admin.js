@@ -2,7 +2,7 @@
 
 import React from "react";
 import AdminRow from "./admin.Customer.js";
-import { Input, Avatar, Row, Col, Menu, Dropdown } from "antd";
+import { Avatar, Row, Col, Menu, Dropdown } from "antd";
 import {
   UserOutlined,
   MessageOutlined,
@@ -10,7 +10,6 @@ import {
   LayoutOutlined,
   AppstoreOutlined,
   DownOutlined,
-  MenuOutlined,
   ShopOutlined,
   ShoppingCartOutlined,
   AppstoreAddOutlined,
@@ -31,6 +30,7 @@ import {
   NavLink,
   useRouteMatch,
   useParams,
+  Redirect
 } from "react-router-dom";
 import "./admin.scss";
 import Dashboard from "./admin.DashBoard.js";
@@ -38,12 +38,13 @@ import ProductRow from "./ProductRow.js";
 import Order from "./admin.Order.js";
 import AddProduct from "./admin.AddProduct.js";
 import { useDispatch } from "react-redux";
+import Notfound from '../notFound/NotFound.js';
 
 
   
 
 const Admin = () => {
-  const name = JSON.parse(localStorage.getItem("inforUser"));
+  const user = JSON.parse(localStorage.getItem("inforUser"));
   const dispatch = useDispatch()
   let { path, url } = useRouteMatch();
   const isMoblie = useMediaQuery({
@@ -72,7 +73,7 @@ const Admin = () => {
       <Menu.Item key="0">
         <p className="admin__text" onClick={logOut}>
           <span>
-            <LogoutOutlined />{" "}
+            <LogoutOutlined />
           </span>
           Log Out
         </p>
@@ -132,9 +133,8 @@ const Admin = () => {
                     onClick={(e) => e.preventDefault()}
                   >
                     <Avatar size="medium" icon={<UserOutlined />} />
-
                     <span style={{ color: "#62d2a2", marginLeft: "10px" }}>
-                      {name.fullName}{" "}
+                      {user.fullName}{" "}
                     </span>
                   </a>
                 </Dropdown>
@@ -165,7 +165,7 @@ const Admin = () => {
                     <Avatar size="medium" icon={<UserOutlined />} />
 
                     <span style={{ color: "#62d2a2", marginLeft: "10px" }}>
-                      {name.fullName}{" "}
+                      {user.fullName}{" "}
                     </span>
                   </a>
                 </Dropdown>
@@ -204,21 +204,18 @@ const Admin = () => {
                     Dashboard
                   </li>
                 </NavLink>
-
                 <NavLink className="admin-text" to={`${url}${ROUTE.CUSTOMER}`}>
                   <li onClick={dispatch(setCurrentPage(1))}>
                     <UserOutlined className="icon" />
                     User
                   </li>
                 </NavLink>
-
                 <NavLink className="admin-text" to={`${url}${ROUTE.ORDERS}`}>
                   <li onClick={dispatch(setCurrentPage(1))}>
                     <ShoppingCartOutlined className="icon" />
                     Orders
                   </li>
                 </NavLink>
-
                 <NavLink className="admin-text" to={`${url}${ROUTE.PRODUCTS}`}>
                   <li onClick={dispatch(setCurrentPage(1))}>
                     <ShopOutlined className="icon" />
@@ -237,25 +234,26 @@ const Admin = () => {
               </ul>
             </Col>
           )}
-
           <Col span={isMoblie ? 24 : 18}>
             <div className="admin__content">
               <Switch>
-                <Route path={`${path}${ROUTE.DASHBOARD}`}>
-                  <Dashboard />
-                </Route>
-                <Route path={`${path}${ROUTE.CUSTOMER}`} exact>
-                  <AdminRow />
-                </Route>
-                <Route path={`${path}${ROUTE.ORDERS}`} exact>
-                  <Order />
-                </Route>
-                <Route path={`${path}${ROUTE.PRODUCTS}`} exact>
-                  <ProductRow />
-                </Route>
-                <Route path={`${path}${ROUTE.ADDPRODUCT}`} exact>
-                  <AddProduct />
-                </Route>
+                {user?.role == 1 && <>
+                    <Route path={`${path}${ROUTE.DASHBOARD}`} exact>
+                      <Dashboard />
+                    </Route>
+                    <Route path={`${path}${ROUTE.CUSTOMER}`}>
+                      <AdminRow />
+                    </Route>
+                    <Route path={`${path}${ROUTE.ORDERS}`}>
+                      <Order />
+                    </Route>
+                    <Route path={`${path}${ROUTE.PRODUCTS}`}>
+                      <ProductRow />
+                    </Route>
+                    <Route path={`${path}${ROUTE.ADDPRODUCT}`}>
+                      <AddProduct />
+                    </Route>
+                </>}
               </Switch>
             </div>
           </Col>

@@ -8,7 +8,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postListProductApi } from "../../redux/reducers/productSlice";
 import "../../style/form.scss";
-import axios from 'axios';
 const AddProduct = () => {
   const dispatch = useDispatch();
   const [image, setImage] = useState()
@@ -31,7 +30,6 @@ const AddProduct = () => {
   };
 
   const handleSave = async () => {
-    // console.log(image[0].name)
     formVl.img = image[0];
     let formData = new FormData();
     formData.append('name', formVl.name);
@@ -41,15 +39,8 @@ const AddProduct = () => {
     formData.append('color', formVl.color);
     formData.append('stock', formVl.stock);
     formData.append('img', formVl.img);
-    console.log(formData)
-    // const { data } = await axios.post(`http://localhost:5000/products`, formData)
-    // console.log(data)
-    // if (!!formVl) {
-      // console.log(formVl)
-      message.success('Add product success!', 3);
+     message.success('Add product success!', 3);
     await dispatch(postListProductApi(formData));
-    // } else {
-    // }
   };
   return (
     <Form name='nest-messages' validateMessages={ValidateMessage}>

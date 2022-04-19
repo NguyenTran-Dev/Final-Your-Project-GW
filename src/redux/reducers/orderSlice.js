@@ -5,7 +5,6 @@ import {createAsyncThunk } from "@reduxjs/toolkit";
 export const addOrderApi = createAsyncThunk(
     "order/addOrderApi",
     async (payload) => {
-        console.log('payload',payload);
       await axios
         .post(`http://localhost:5000/order`, {
           customer_id : payload.listId,
@@ -14,7 +13,6 @@ export const addOrderApi = createAsyncThunk(
           cart : payload.cart
         })
         .then((res) => {
-          // console.log(".addOrderApi ~ res", res);
           return res;
         })
         .catch((e) => {
@@ -22,7 +20,27 @@ export const addOrderApi = createAsyncThunk(
         });
     }
   );
-
+  export const paymentOrderApi = createAsyncThunk(
+    "order/paymentOrderApi",
+    async (payload) => {
+      await axios
+        .post(`http://localhost:5000/payment/create_payment_url`, {
+          amount: payload.total * 23000,
+          billId: payload.listId
+        })
+        .then((res) => {
+<<<<<<< HEAD
+          console.log(".addOrderApi ~ res", res.data.url);
+=======
+>>>>>>> 8507f17 (code payment VNpay)
+          window.location.assign(res.data.url)
+          return res;
+        })
+        .catch((e) => {
+          console.log("e", e);
+        });
+    }
+  );
   export const getOrderApi = createAsyncThunk(
     "order/addOrderApi",
     async () => {
@@ -49,7 +67,7 @@ export const addOrderApi = createAsyncThunk(
           return res;
         })
         .catch((e) => {
-          console.log("e", e);
+          // console.log("e", e);
         });
       return res.data;
     }
@@ -64,7 +82,7 @@ export const addOrderApi = createAsyncThunk(
           return res;
         })
         .catch((e) => {
-          console.log("e", e);
+          // console.log("e", e);
         });
       return res.data;
     }

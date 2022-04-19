@@ -5,7 +5,6 @@ import {createAsyncThunk } from "@reduxjs/toolkit";
 export const addCommentApi = createAsyncThunk(
     "comments/addCommentApi",
     async (payload) => {
-      console.log("🚀 ~ file: commentSlice.js ~ line 8 ~ payload", payload.rate)
       await axios
         .post(`http://localhost:5000/comments`, {
           product_id: payload.product_id,
@@ -14,7 +13,6 @@ export const addCommentApi = createAsyncThunk(
           rating: payload.rate
         })
         .then((res) => {
-          console.log(".addCustomerApi ~ res", res);
           return res;
         })
         .catch((e) => {

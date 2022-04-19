@@ -3,7 +3,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { switchCase } from "@babel/types";
 
 export const getListProductApi = createAsyncThunk(
   "product/getProductApi",
@@ -11,7 +10,6 @@ export const getListProductApi = createAsyncThunk(
     const res = await axios
       .get(`http://localhost:5000/products/search?KeySearch`)
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {
@@ -28,7 +26,6 @@ export const postListProductApi = createAsyncThunk(
     await axios
       .post(`http://localhost:5000/products`, payload)
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {
@@ -47,11 +44,9 @@ export const updateProductApi = createAsyncThunk(
         stock: payload.stock,
       })
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {
-        // console.log("e", e);
       });
     return res.data;
   }
@@ -62,7 +57,6 @@ export const deleteListProductApi = createAsyncThunk(
     const res = await axios
       .delete(`http://localhost:5000/products/delete/${id}`)
       .then((res) => {
-        // console.log(".listProductApi ~ res", res);
         return res;
       })
       .catch((e) => {
@@ -400,7 +394,6 @@ const listProduct = createSlice({
     addToCart: (state, action) => {
       const id = action.payload.id;
       const isExist = state.cart.find((item) => item.id === id);
-
       if (isExist) {
         state.cart = state.cart.map((item) => {
           if (item.id === id) {
