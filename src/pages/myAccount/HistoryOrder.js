@@ -109,11 +109,14 @@ const HistoryOrder = () => {
             </Button>
           </td>
           <td className='icon'>
-            <DeleteOutlined onClick={async()=>{
+            <Button
+              type='danger'
+              disabled = {item.status === 'Done' ? false : true}
+              onClick={async () => {
               await dispatch(deleteOrderApi(item.id));
               dispatch(getOrderUserApi());
               window.location.reload()
-            }}/>
+            }}> Delete </Button>
           </td>
         </tr>
       );

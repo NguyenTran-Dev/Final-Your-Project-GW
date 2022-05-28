@@ -29,19 +29,19 @@ const Footer = () => {
             Location:
           </h3>
           <a href="https://goo.gl/maps/qbG5TN9bEP3iWFGL7">
-            127 Hung Vuong street,
-            <br /> Vinh Trung, Da Nang City
+            78 Le Thanh Nghi street,
+            <br /> Hai Chau, Da Nang City
           </a>
           <h3 className="footer--padding">
             <PhoneOutlined className="icon" />
             Call Us Now:
           </h3>
-          <p>0943.11.9999</p>
+          <p>0943.116.207</p>
           <h3 className="footer--padding">
             <MailOutlined className="icon" />
             Email:
           </h3>
-          <p>lndteams.dev@gmail.com</p>
+          <p>nguyenthtran.dev@gmail.com</p>
         </Col>
         <Col
           className="footer__contact--newArrivals"
@@ -109,7 +109,7 @@ const Footer = () => {
           <Col lg={{ span: 19 }}>
             <i>
               &copy; 2021 <strong>Selena</strong> Made with{" "}
-              <HeartTwoTone twoToneColor="#eb2f96" /> by <a>LND team</a>
+              <HeartTwoTone twoToneColor="#eb2f96" /> by <a>Tran Huu Thuc Nguyen</a>
             </i>
           </Col>
           <Col lg={{ span: 5 }}>

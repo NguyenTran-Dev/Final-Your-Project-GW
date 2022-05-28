@@ -21,8 +21,7 @@ const Order = function(order) {
     delete orderSave.cart;
     return new Promise((resolve, reject) => {
         sql.query(`INSERT INTO orders SET ?`, orderSave, (error, results) => {
-            if (error) {
-                console.log('select order error')   ;  
+            if (error) { 
                 return reject(error);
             }
             return resolve({ id: results.insertId, ...orderSave });
@@ -33,13 +32,10 @@ const Order = function(order) {
     const saveOrderDetail = async (newOrderDetail) => {
         return new Promise((resolve, reject) => {
             sql.query(`INSERT INTO order_detail (product_id , quantity , order_id ) VALUES ?`, [newOrderDetail] , (error, results) => {
-                if (error) {
-                    console.log('save order detail error')   ;                 
+                if (error) {              
                     return reject(error);
                 }
                 return resolve({success: true});
-                // return resolve(results);
-                
               });
             });
         

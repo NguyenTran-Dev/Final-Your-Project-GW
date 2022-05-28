@@ -20,7 +20,7 @@ const ChangePassword = () => {
                 <Input.Password className='form__group--input' placeholder='Input current password' />
               </Form.Item>
               <Form.Item
-                name="password"
+                name="passwordnew"
                 rules={[
                   {
                     required: true,
@@ -31,7 +31,7 @@ const ChangePassword = () => {
                 <Input.Password className='form__group--input' placeholder='Input new password' />
               </Form.Item>
               <Form.Item
-                name="password"
+                name="passwordcf"
                 rules={[
                   {
                     required: true,

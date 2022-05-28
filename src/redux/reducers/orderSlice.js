@@ -5,7 +5,6 @@ import {createAsyncThunk } from "@reduxjs/toolkit";
 export const addOrderApi = createAsyncThunk(
     "order/addOrderApi",
     async (payload) => {
-        console.log('payload',payload);
       await axios
         .post(`http://localhost:5000/order`, {
           customer_id : payload.listId,
@@ -14,7 +13,6 @@ export const addOrderApi = createAsyncThunk(
           cart : payload.cart
         })
         .then((res) => {
-          // console.log(".addOrderApi ~ res", res);
           return res;
         })
         .catch((e) => {
@@ -31,7 +29,10 @@ export const addOrderApi = createAsyncThunk(
           billId: payload.listId
         })
         .then((res) => {
+<<<<<<< HEAD
           console.log(".addOrderApi ~ res", res.data.url);
+=======
+>>>>>>> 8507f17 (code payment VNpay)
           window.location.assign(res.data.url)
           return res;
         })

@@ -8,14 +8,21 @@ var router = express.Router();
          req.socket.remoteAddress ||
          req.connection.socket.remoteAddress;
      var dateFormat = require('dateformat');
+<<<<<<< HEAD
  
+=======
+>>>>>>> 8507f17 (code payment VNpay)
      var tmnCode = vnpayConfig.vnp_TmnCode;
      var secretKey = vnpayConfig.vnp_HashSecret;
      var vnpUrl = vnpayConfig.vnp_Url;
      var returnUrl = vnpayConfig.vnp_ReturnUrl;
+<<<<<<< HEAD
  
      var date = new Date();
  
+=======
+     var date = new Date();
+>>>>>>> 8507f17 (code payment VNpay)
      var createDate = dateFormat(date, 'yyyymmddHHmmss');
      var orderId = dateFormat(date, 'HHmmss');
      const { amount, billId} = req.body;
@@ -35,9 +42,13 @@ var router = express.Router();
      vnp_Params['vnp_ReturnUrl'] = returnUrl;
      vnp_Params['vnp_IpAddr'] = ipAddr;
      vnp_Params['vnp_CreateDate'] = createDate;
+<<<<<<< HEAD
  
      vnp_Params = sortObject(vnp_Params);
  
+=======
+     vnp_Params = sortObject(vnp_Params);
+>>>>>>> 8507f17 (code payment VNpay)
      var querystring = require('qs');
      var signData = querystring.stringify(vnp_Params, { encode: false });
      var crypto = require("crypto");     
@@ -45,7 +56,10 @@ var router = express.Router();
      var signed = hmac.update(Buffer.from(signData, 'utf-8')).digest("hex"); 
      vnp_Params['vnp_SecureHash'] = signed;
      vnpUrl += '?' + querystring.stringify(vnp_Params, { encode: false });
+<<<<<<< HEAD
  
+=======
+>>>>>>> 8507f17 (code payment VNpay)
      res.status(200).json({url: vnpUrl})
  });
  
@@ -65,4 +79,8 @@ var router = express.Router();
      return sorted;
  }
  
+<<<<<<< HEAD
  module.exports = router;
+=======
+ module.exports = router;
+>>>>>>> 8507f17 (code payment VNpay)

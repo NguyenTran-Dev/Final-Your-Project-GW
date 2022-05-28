@@ -71,16 +71,16 @@ const Contact = () => {
               nunc putamus parum claram anteposuerit litterarum formas human.
             </p>
             <p>
-              <EnvironmentOutlined className="icon" /> Address : 127 Hung Vuong
-              street, Vinh Trung Ward, Da Nang City
+              <EnvironmentOutlined className="icon" /> Address : 78 Le Thanh Nghi
+              street, Hai Chau Ward, Da Nang City
             </p>
             <p>
               <MailOutlined className="icon" />
-              Email: lndteams.dev@gmail.com
+              Email: nguyenthtran.dev@gmail.com
             </p>
             <p>
               <PhoneOutlined className="icon" />
-              Phone Number: 0943.11.9999
+              Phone Number: 0943.116.207
             </p>
             <h2>Working hours</h2>
             <p>Monday – Saturday: 08AM – 22PM</p>
@@ -89,7 +89,7 @@ const Contact = () => {
         <Row>
           <iframe
             className="form__contact--map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.9734333957804!2d108.211256115361!3d16.06686834376772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142184a810229eb%3A0x155a6ca1b747012!2zR08hIMSQw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1630157368370!5m2!1svi!2s"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.454668602513!2d108.2142685153433!3d16.041879044430296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219f7fd832c31%3A0x6942394fdfaa9c84!2zNzggxJAuIEzDqiBUaGFuaCBOZ2jhu4ssIEhvw6AgQ8aw4budbmcgQuG6r2MsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1650986712952!5m2!1svi!2s"
             allowfullscreen=""
             loading="lazy"
           ></iframe>

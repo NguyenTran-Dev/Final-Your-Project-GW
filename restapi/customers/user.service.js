@@ -17,15 +17,11 @@ async function authenticate({
     password
 }) {
     const user = await findUser(username);
-    console.log(user)
     if (!user)
         throw 'Username is incorrect';
-
     const checkPassword = await bcrypt.compare(password, user.password)
-
     if (!checkPassword)
         throw 'Password is incorrect';
-
     // authentication successful
     const token = jwt.sign({
         sub: user.id
@@ -68,48 +64,28 @@ async function getById(id) {
 }
 
 async function create(params) {
-    console.log("🚀 ~ file: user.service.js ~ line 54 ~ create ~ params", params)
     const checkUser = await findUser(params.username);
-    // validate
     if (checkUser) {
         throw 'Username "' + params.username + '" is already taken';
     }
-
     if (params.password) {
         params.password = await bcrypt.hash(params.password, 6);
     }
-
     db.query("INSERT INTO customers SET ?", params, (err, res) => {
         if (err) {
             console.log("error: ", err);
-            // result(err, null);
             return;
         }
-
-        console.log("created customer: ", params);
-        //   result(null, params);
     });
-
 }
 
 
 
 async function update(id, params) {
-console.log("🚀 ~ file: user.service.js ~ line 98 ~ update ~ params", params)
     const user = await getUser(id);
-    // validate
-    // const usernameChanged = params.username && user.username !== params.username;
-    // // if (usernameChanged && await findUser(params.username)) {
-    // //     throw 'Username "' + params.username + '" is already taken';
-    // // }
-
-    // hash password if it was entered
     if (params.password) {
         params.hash = await bcrypt.hash(params.password, 10);
     }
-
-    // copy params to user and save
-    // Object.assign(user, params);
     await db.query(`UPDATE customers SET fullName='${params.fullName}', address='${params.address}',
      mail='${params.mail}', username='${params.username}', phone='${params.phone}', gender='${params.gender}',
     password='${params.password}' WHERE id =${id}`, (err, res) => {
@@ -132,12 +108,10 @@ async function _delete(id) {
           console.log("error: ", err);
           return(err) ;
         }
-    
         if (res.affectedRows === 0) {
           // not found Customer with the id
           return (null);
         }
-    
         console.log("deleted customer with id: ", id);
        return (res)
       });

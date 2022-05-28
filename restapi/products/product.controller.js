@@ -30,7 +30,6 @@ exports.create = (req, res) => {
           message: "Content can not be empty!"
         });
   };
-    
     const product = new Products ({
       name: req.body.name,
       price: req.body.price,
@@ -75,7 +74,6 @@ exports.update = (req, res) => {
         message: "Content can not be empty!"
       });
     }
-  
     Products.updateById(
       req.params.id,
       new Products(req.body),

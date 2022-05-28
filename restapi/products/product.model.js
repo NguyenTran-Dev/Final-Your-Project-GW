@@ -15,18 +15,19 @@ const Products = function (products) {
   Products.create = (newProduct, result) => {
     sql.query("INSERT INTO products SET ?", newProduct, (err, res) => {
       if (err) {
-        console.log("error: ", err);
         result(err, null);
         return;
       }
+<<<<<<< HEAD
   
       // console.log("created products: ", { id: res.insertId, ...newProduct });
+=======
+>>>>>>> 8507f17 (code payment VNpay)
       result(null, { id: res.insertId, ...newProduct });
     });
   };
   
   Products.getProducts = ( req, result) => {
-    //   const { productsName, productsType } = req.query;
       const keySearch = req.query?.keySearch || '';
     sql.query(`SELECT * FROM products WHERE name like '%${keySearch}%' or type like '%${keySearch}%'`, (err, res) => {
       if (err) {
@@ -34,14 +35,14 @@ const Products = function (products) {
         result(err, null);
         return;
       }
-  
       if (res.length) {
+<<<<<<< HEAD
         // console.log("found products: ", res );
+=======
+>>>>>>> 8507f17 (code payment VNpay)
         result(null, res);
         return;
       }
-  
-      // not found products with the name
       result({ kind: "not_found" }, null);
     });
   };

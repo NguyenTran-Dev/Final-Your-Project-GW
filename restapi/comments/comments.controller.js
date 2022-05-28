@@ -15,7 +15,6 @@ exports.create = (req, res) => {
       customer_id: req.body.customer_id,
   
     });
-
       Comment.create(comment, (err, data) => {
         if (err)
           res.status(500).send({
