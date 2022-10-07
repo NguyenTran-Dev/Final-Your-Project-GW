@@ -1,6 +1,3 @@
-/** @format */
-
-<<<<<<< HEAD
 exports.create = (req, res) => {
     if (!req.body) {
         res.status(400).send({
@@ -16,7 +13,6 @@ exports.create = (req, res) => {
     Order.create(order, ( data) => {
          res.send(data);
     });
-=======
 const Order = require('./order.model.js');
 
 exports.create = (req, res) => {
@@ -34,7 +30,6 @@ exports.create = (req, res) => {
   Order.create(order, (data) => {
     res.send(data);
   });
->>>>>>> 8507f17 (code payment VNpay)
 };
 // Retrieve all Customers from the database.
 exports.findAll = (req, res) => {
