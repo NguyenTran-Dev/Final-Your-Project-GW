@@ -64,11 +64,6 @@ const Checkout = () => {
     dispatch(addOrderApi(request));
     dispatch(clearItemCart(-1));
     dispatch(paymentOrderApi(request));
-<<<<<<< HEAD
-
-    // history.push('/my-account')
-=======
->>>>>>> 8507f17 (code payment VNpay)
   };
 
   const getTotal = (ship) => {
